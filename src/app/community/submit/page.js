@@ -1,0 +1,2 @@
+import { requireUser } from "@/lib/auth"; import { SubmissionForm } from "./submission-form";
+export default async function Submit(){const {supabase}=await requireUser();const [{data:games},{data:categories}]=await Promise.all([supabase.from("games").select("id,name").eq("is_active",true),supabase.from("categories").select("id,name,game_id").eq("is_active",true)]);return <section className="container section" style={{maxWidth:760}}><h1>Kirim mod gratis</h1><SubmissionForm games={games||[]} categories={categories||[]}/></section>}
