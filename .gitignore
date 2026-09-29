@@ -3,6 +3,7 @@ node_modules-partial/
 .next/
 .next-stale-*/
 coverage/
+.tmp/
 .env
 .env.local
 .env.*.local
