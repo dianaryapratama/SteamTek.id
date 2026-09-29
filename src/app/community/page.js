@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Community(){return <section className="container section"><h1>Komunitas SteamTek</h1><p className="muted">Bagikan mod gratis yang legal, aman, dan bermanfaat. Semua kiriman diperiksa admin sebelum diterbitkan.</p><div className="card"><h2>Punya karya atau izin distribusi?</h2><p>Sertakan sumber resmi, kompatibilitas, tautan eksternal, dan pernyataan izin. Perubahan tautan setelah disetujui akan ditinjau ulang.</p><Link className="button" href="/community/submit">Kirim kontribusi</Link></div></section>}

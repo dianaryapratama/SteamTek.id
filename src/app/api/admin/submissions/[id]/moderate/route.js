@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server"; import { requireAdmin } from "@/lib/auth"; import { apiError } from "@/lib/http"; import { moderationSchema } from "@/lib/validation";
+export async function POST(request,{params}){try{const {supabase}=await requireAdmin();const {id}=await params;const input=moderationSchema.parse(await request.json());const {data,error}=await supabase.rpc("moderate_submission",{target_submission:id,target_decision:input.decision,review_notes:input.notes});if(error)throw error;return NextResponse.json({productId:data})}catch(e){return apiError(e)}}

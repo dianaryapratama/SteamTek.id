@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react"; import { createClient } from "@/lib/supabase/client";
+export default function Reset(){const[msg,setMsg]=useState("");async function submit(e){e.preventDefault();const password=new FormData(e.currentTarget).get("password");const {error}=await createClient().auth.updateUser({password});setMsg(error?error.message:"Kata sandi berhasil diperbarui.")}return <section className="container section" style={{maxWidth:520}}><form className="card" onSubmit={submit}><h1>Atur kata sandi baru</h1>{msg&&<p>{msg}</p>}<label className="field">Kata sandi baru<input name="password" type="password" minLength="8" required/></label><button className="button">Simpan</button></form></section>}
