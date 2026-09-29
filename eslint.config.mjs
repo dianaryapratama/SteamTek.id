@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 
 export default [
-  { ignores: [".next/**", "coverage/**", "docs-local/**", "node_modules-partial/**"] },
+  { ignores: [".next/**", ".next-stale-*/**", "coverage/**", "docs-local/**", "node_modules-partial/**"] },
   js.configs.recommended,
   {
     files: ["**/*.{js,mjs}"],
